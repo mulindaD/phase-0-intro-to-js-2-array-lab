@@ -2,36 +2,50 @@
 
 const cats = ["Milo", "Otis", "Garfield"]
 
-function destructivelyAppendCat(name) {
-    return cats.push(name)
-}
+// function destructivelyAppendCat(name) {
+//     return cats.push(name)
+// }
+// Refactoring the destructivelyAppendCat function to one line 
+const destructivelyAppendCat = name => cats.push(name)
 
-function destructivelyPrependCat(name) {
-    return cats.unshift(name)
-}
 
-function destructivelyRemoveLastCat() {
-    return cats.pop()
-}
+// function destructivelyPrependCat(name) {
+//     return cats.unshift(name)
+// }
 
-function destructivelyRemoveFirstCat() {
-    return cats.shift()
-}
+const destructivelyPrependCat = name => cats.unshift(name)
 
-function appendCat(name) {
-    const newCats = [...cats, name]
-    return newCats
-}
+const destructivelyRemoveLastCat = () => cats.pop()
 
-function prependCat(name) {
-    const newCats = [name, ...cats]
-    return newCats
-}
+// function destructivelyRemoveLastCat() {
+//     return cats.pop()
+// }
 
-function removeLastCat() {
-    return cats.slice(0, cats.length - 1)
-}
+const destructivelyRemoveFirstCat = () => cats.shift()
+// function destructivelyRemoveFirstCat() {
+//     return cats.shift()
+// }
 
-function removeFirstCat() {
-    return cats.slice(1)
-}
+
+// function appendCat(name) {
+//     const newCats = [...cats, name]
+//     return newCats
+// }
+const appendCat = name => [...cats, name]
+
+const prependCat = name => [name, ...cats]
+// function prependCat(name) {
+//     const newCats = [name, ...cats]
+//     return newCats
+// }
+
+const removeLastCat = () => cats.slice(0, -1)
+
+// function removeLastCat() {
+//     return cats.slice(0, cats.length - 1)
+// }
+
+const removeFirstCat = () => cats.slice(1)
+// function removeFirstCat() {
+//     return cats.slice(1)
+// }
